@@ -18,5 +18,9 @@ app.post('/send', function(req, res) {
   res.send(`There is no text`);
 });
 
+app.get('/', function(req, res) {
+  res.send('it works');
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 bot.launch();
