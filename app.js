@@ -1,5 +1,6 @@
 const bot = require('./bot');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const ChannelWizard = require('./Classes/ChannelWizard');
 const app = express();
@@ -8,7 +9,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(cors);
 app.post('/send', function(req, res) {
   const { text } = req.body;
   if (text) {
