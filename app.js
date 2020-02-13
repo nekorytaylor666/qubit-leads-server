@@ -9,7 +9,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors);
+app.use(cors());
 app.post('/send', function(req, res) {
   const { text } = req.body;
   if (text) {
