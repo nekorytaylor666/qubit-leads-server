@@ -11,7 +11,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 app.post('/send', function(req, res) {
-  const { text } = req.body;
+  const { fullname, phone, email, problem, selected } = req.body;
+  const { HH, mm } = req.body.time;
+  console.log(req.body);
+  const text = `Имя: ${fullname}\nНомер: ${phone}\nEmail: ${email}\nПроблема: ${problem}\nПотребность: ${selected}\nУдобное время: ${HH}:${mm}`;
   if (text) {
     channel.sendMessage(text);
     return res.send(`Bot have sent message to channel with message: ${text}`);
