@@ -20,6 +20,7 @@ class ChannelWizard {
     //     }
     //   ).extra()
     // );
+    console.log(this.channelId);
     this.telegram.sendMessage(this.channelId, text);
   }
 }
